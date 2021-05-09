@@ -1,5 +1,5 @@
 Operacao = input('''
-Por favor, insiera o a operacao matematica que voce gostaria de fazer:
+Por favor, insira o a operacao matematica que voce gostaria de fazer:
 + para somar
 - para subtrair
 * para multiplicar

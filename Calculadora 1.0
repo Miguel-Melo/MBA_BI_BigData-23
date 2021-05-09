@@ -1,14 +1,15 @@
 def calculate():
     operacao = input('''
-Por favor, insira o a operacao matematica que voce gostaria de fazer::
-+ para adicao
-- para subtracao
-* para multiplicacao
-/ para divisao
+Por favor, insira o a operação matemática que você gostaria de fazer::
++ para adicão
+- para subtração
+* para multiplicação
+/ para divisão
+** para exponenciação
 ''')
 
-    numero_1 = int(input('Por favor, insira o primeiro numero: '))
-    numero_2 = int(input('Por favor, insira o segundo numero: '))
+    numero_1 = int(input('Por favor, insira o primeiro número: '))
+    numero_2 = int(input('Por favor, insira o segundo número: '))
 
     if operacao == '+':
         print('{} + {} = '.format(numero_1, numero_2))
@@ -26,11 +27,11 @@ Por favor, insira o a operacao matematica que voce gostaria de fazer::
         print('{} / {} = '.format(numero_1, numero_2))
         print(numero_1 / numero_2)
         
-        elif operacao == '**':
-        print('{} / {} = '.format(numero_1, numero_2))
+    elif operacao == '**':
+        print('{} ** {} = '.format(numero_1, numero_2))
         print(numero_1 ** numero_2)
 
     else:
-        print('Voce nao inseriu um operador valido, Por favor, rode o programa novamente')
+        print('Você nao inseriu um operador válido, Por favor, rode o programa novamente')
 
 calculate()

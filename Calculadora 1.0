@@ -1,26 +1,32 @@
-Operacao = input('''
-Por favor, insira o a operacao matematica que voce gostaria de fazer:
-+ para somar
-- para subtrair
-* para multiplicar
-/ para dividir
+def calculate():
+    operacao = input('''
+Por favor, insira o a operacao matematica que voce gostaria de fazer::
++ para adicao
+- para subtracao
+* para multiplicacao
+/ para divisao
 ''')
 
-numero_1 = int(input('Insira o primeiro número: '))
-numero_2 = int(input('Insira o segundo número: '))
+    numero_1 = int(input('Por favor, insira o primeiro numero: '))
+    numero_2 = int(input('Por favor, insira o segundo numero: '))
 
-#Adição
-print('{} + {} = '.format(numero_1, numero_2))
-print(numero_1 + numero_2)
+    if operacao == '+':
+        print('{} + {} = '.format(numero_1, numero_2))
+        print(numero_1 + numero_2)
 
-# Subtração
-print('{} - {} = '.format(numero_1, numero_2))
-print(numero_1 - numero_2)
+    elif operacao == '-':
+        print('{} - {} = '.format(numero_1, numero_2))
+        print(numero_1 - numero_2)
 
-# Multiplicação
-print('{} * {} = '.format(numero_1, numero_2))
-print(numero_1 * numero_2)
+    elif operacao == '*':
+        print('{} * {} = '.format(numero_1, numero_2))
+        print(numero_1 * numero_2)
 
-# Divisão
-print('{} / {} = '.format(numero_1, numero_2))
-print(numero_1 / numero_2)
+    elif operacao == '/':
+        print('{} / {} = '.format(numero_1, numero_2))
+        print(numero_1 / numero_2)
+
+    else:
+        print('Voce nao inseriu um operador valido, Por favor, rode o programa novamente')
+
+calculate()

@@ -1,0 +1,8 @@
+#3.	Criar uma matriz nxm (n = 5, m =7)
+#a.	faça a matriz transposta desta matriz
+#b.	somar toda matrix
+#c.	somar todas as colunas
+#d.	somar todas as linhas.
+#e.	retorne o maior valor
+#f.	retorne o menor valor.
+

@@ -1,1 +1,18 @@
-# 2.	crie um método que receba duas matrizes, some os valores total de cada matriz e depois multiple o resultado delas e retorne o valor.
+# Exercício 2.	crie um método que receba duas matrizes, some os valores total de cada matriz e depois multiple o resultado delas e retorne o valor.
+
+import numpy as np
+
+matriz1 = np.array([[4,1],[5,2]])
+matriz2 = np.array([[3,2],[8,6]]) 
+
+def matriz_calculada(m1,m2):
+
+  soma1 = (m1.sum(axis = 0).sum(axis = 0))
+  soma2 = (m2.sum(axis = 0).sum(axis = 0))
+
+  return (soma1 * soma2)
+
+print('''2-Crie um método que receba duas matrizes, 
+some os valores total de cada matriz e depois multiple o resultado delas e retorne o valor.''')
+print("")
+print(matriz_calculada(A,B))

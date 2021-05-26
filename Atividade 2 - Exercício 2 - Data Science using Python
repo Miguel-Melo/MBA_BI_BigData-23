@@ -12,7 +12,7 @@ def matriz_calculada(m1,m2):
 
   return (soma1 * soma2)
 
-print('''2-Crie um método que receba duas matrizes, 
+print('''2  -Crie um método que receba duas matrizes, 
 some os valores total de cada matriz e depois multiple o resultado delas e retorne o valor.''')
 print("")
 print(matriz_calculada(A,B))

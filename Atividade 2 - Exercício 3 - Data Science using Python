@@ -6,3 +6,48 @@
 #e.	retorne o maior valor
 #f.	retorne o menor valor.
 
+
+import numpy as np 
+matriz = np.random.rand(5 , 7)
+
+#A
+matriz_transposta = matriz.T
+
+#B
+soma = matriz.sum(axis = 0).sum(axis = 0)
+
+#C
+somar_coluna = matriz.sum(axis = 0)
+#D
+somar_linha = matriz.sum(axis = 1)
+#E
+maior = matriz.max()
+#F
+menor = matriz.min()
+
+print('''Criar uma matriz nxm (n = 5, m =7)''')
+print("")
+
+print("a): matriz transposta")
+print(matriz_transposta)
+print("")
+
+print("b): somar toda matriz")
+print(soma)
+print("")
+
+print("c): soma das colunas")
+print(somar_coluna)
+print("")
+
+print("d): soma das linhas")
+print(somar_linha)
+print("")
+
+print("e): maior valor da matriz")
+print(maior)
+print("")
+
+print("f): menor valor da matriz")
+print(menor)
+print("")

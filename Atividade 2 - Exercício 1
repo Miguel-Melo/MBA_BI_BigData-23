@@ -1,1 +1,14 @@
+#1.	Você tem uma lista de número: [6,7,4,7,8,4,2,5,7,'hum', 'dois']. A ideia do exercício é tirar a média de todos os valores contidos na lista,
+porém para fazer o cálculo precisa remover as strings.
 
+import numpy as np
+
+lista1 = [6, 7, 4, 7, 8, 4, 2, 5, 7, 'hum', 'dois']
+lista1.remove("dois")
+lista1.remove('hum')
+print(lista1)
+
+--------------
+
+print("lista1 :", lista1)
+print("A Média da lista 1 é: 0", np.mean(lista1))

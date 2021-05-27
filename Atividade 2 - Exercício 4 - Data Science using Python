@@ -1,3 +1,12 @@
 #4. Crie uma matriz nxn (n=5). Agora some essa matriz com a matriz do exercício 3.
 
+import numpy as np
 
+matriz = np.random.rand(5 , 7)
+
+n5 = np.random.rand(5)
+
+if len(n5) == len(matriz_n5):
+    soma = sum(n5) + sum(matriz_n5)
+    print("Matriz somada com a matriz do exercício 3: '\n")
+    print(soma)

@@ -1,1 +1,11 @@
+#6. crie uma matriz só de zeros.
 
+
+import numpy as np
+
+matriz_zeros =  np.zeros((20,21))
+
+print('''Matriz só de zeros.
+''')
+print("")
+print(matriz_zeros)

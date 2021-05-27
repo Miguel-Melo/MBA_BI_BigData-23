@@ -1,0 +1,8 @@
+#Desafio 1: Voce irá entrar em uma conversa do seu whats up. Baixar a conversa em formato txt. Depois disso irá importar usando PYTHON. 
+#O desafio será, na leitura voce deverá identificar os seguintes pontos:
+#1 - Quais as palavras mais trocadas na conversa.
+#2 - Qual o dia da semana que mais troca mensagem.
+#3 - Qual o horario que mais fala.
+#4 - Qual o horario que menos fala.
+#Para fazer esse desafio, voce deverá levar em consideração hum mês de conversa.
+

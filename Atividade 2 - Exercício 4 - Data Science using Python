@@ -1,2 +1,10 @@
 #4. Crie uma matriz nxn (n=5). Agora some essa matriz com a matriz do exercício 3.
 
+import numpy as np
+
+matriz_zeros =  np.zeros((20,21))
+
+print('''Matriz só de zeros.
+''')
+print("")
+print(matriz_zeros)

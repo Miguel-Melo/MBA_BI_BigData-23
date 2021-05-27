@@ -1,1 +1,8 @@
+#5. crie um array de números que vai de 0 a 1000.
 
+import numpy as np
+
+print("Array de 0 a 1000" '\n')
+
+lista = np.arange(0,1001)
+print(lista)

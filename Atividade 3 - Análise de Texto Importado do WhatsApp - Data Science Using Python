@@ -6,3 +6,110 @@
 #4 - Qual o horario que menos fala.
 #Para fazer esse desafio, voce deverá levar em consideração hum mês de conversa.
 
+#Importando as bibliotecas 
+
+import datetime
+from collections import Counter
+import collections
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#Importando conversa do WhatsApp e formatando data
+
+arq = open("Conversa do WhatsApp com Yamaha 250 Maio.txt", "r", encoding='utf-8')
+
+linha = arq.readline()
+
+lista_datas = []
+lista_erros_formatacao = []
+lista_pessoas = []
+lista_mensagens = []
+
+while linha:
+    linha = arq.readline()
+    
+    try:
+        date_time_obj = datetime.datetime.strptime(linha[0:16], '%d/%m/%Y %H:%M')
+        lista_datas.append(date_time_obj)
+        msg = linha[19:]
+        if(len(msg.split(':')) >= 2):
+            lista_pessoas.append(msg.split(':')[0])
+            lista_mensagens.append(msg.split(':')[1])
+    except ValueError:
+        lista_erros_formatacao.append('Errors de formatação de data')
+arq.close()
+
+#Função para contador de palavras
+
+def contador_palavras(msgs):
+    palavras = []
+    for frases in msgs:
+        for palavra in frases.split():
+            palavras.append(palavra)
+    return Counter(palavras)
+    
+    #Classificação dos dias de semana
+    
+    dia_da_semana = {
+  0: "domingo",
+  1: "segunda",
+  2: "terca",
+  3: "quarta",
+  4: "quinta",
+  5: "sexta",
+  6: "sabado"
+}
+lista_horas = []
+lista_dia_semana = []
+for data in lista_datas:
+    lista_horas.append(data.time().hour)
+    
+    lista_dia_semana.append(dia_da_semana.get(data.weekday()))
+    
+    if(data.weekday() == 1):
+        lista_dia_semana.append('segunda')
+    elif(data.weekday() == 2):
+        lista_dia_semana.append('terca')
+    elif(data.weekday() == 3):
+        lista_dia_semana.append('quarta')
+    elif(data.weekday() == 4):
+        lista_dia_semana.append('quinta')
+    elif(data.weekday() == 5):
+        lista_dia_semana.append('sexta')
+    elif(data.weekday() == 6):
+        lista_dia_semana.append('sabado')
+    elif(data.weekday() == 0):
+        lista_dia_semana.append('domingo')
+        
+
+ #ordenando a lista
+
+#palavras
+palavras_dict = dict(contador_palavras(lista_mensagens))
+palavras_df = pd.DataFrame(palavras_dict.items(), columns=['Palavra', 'Frequencia'])
+palavras_df = palavras_df.sort_values(by=['Frequencia'], ascending=False)
+     
+#dia da semana
+dict_dia_semana = dict(Counter(lista_dia_semana))
+semana_df = pd.DataFrame(dict_dia_semana.items(),columns=['Dia_Semana','Frequencia'])
+semana_df = semana_df.sort_values(by=['Frequencia'], ascending=False)
+
+#horas do dia
+dict_horas = dict(Counter(lista_horas))
+horas_df = pd.DataFrame(dict_horas.items(), columns=['Hora', 'Frequencia'])
+horas_df_1 = horas_df.sort_values(by=['Frequencia'], ascending=False)
+horas_df_2 = horas_df.sort_values(by=['Frequencia'], ascending=True)
+
+print('Palavras mais usadas:')
+print(palavras_df.head(10))  
+print('\n')
+print('Dia da Semana que mais conversada:')
+print(semana_df.head(1))
+print('\n')
+print('Hora mais falada:')
+print(horas_df_1.head(1))
+print('\n')
+print('Hora que menos se fala:') 
+print(horas_df_2.head(1))
